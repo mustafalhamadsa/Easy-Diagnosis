@@ -1,0 +1,1858 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Site Title -->
+    <title> Diagnose </title>
+    <!-- Meta Description Tag -->
+    <meta name="Description" content="Klinik is a HTML5 & CSS3 responsive template">
+    <!-- Favicon Icon -->
+    <link rel="icon" type="image/x-icon" href='{{url_for("static", filename="images/favicon1.png")}}' />
+    <!-- Font Awesoeme Stylesheet CSS -->
+    <link rel="stylesheet" href='{{url_for("static", filename="font-awesome/css/font-awesome.min.css")}}' />
+    <!-- Google web Font -->
+    <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Montserrat:400,500">
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href='{{url_for("static", filename="css/bootstrap.min.css")}}'>
+    <!-- Material Design Lite Stylesheet CSS -->
+    <link rel="stylesheet" href='{{url_for("static", filename="css/material.min.css")}}' />
+     <!-- Material Design Select Field Stylesheet CSS -->
+    <link rel="stylesheet" href='{{url_for("static", filename="css/mdl-selectfield.min.css")}}'>
+    <!-- Custom Main Stylesheet CSS -->
+    <link rel="stylesheet" href='{{url_for("static", filename="css/style.css")}}'>
+
+</head>
+
+
+
+<body>
+    <!-- Start Header -->
+    <header id="header-transparent">
+            <div class="layer-stretch hdr-top">
+                <div class="hdr-top-block">
+                    <div>
+
+
+                    </div>
+
+                </div>
+
+                <div class="hdr-center-logo text-center">
+                 	<a href="/" class="d-inline-block"><img src="static/images/logo1.png" alt=""></a>
+                        <!--<a href="/" class="d-inline-block"><img src="{{url_for('static', filename='images/logo1.png')}}" alt=""></a> -->
+                </div>
+
+			</div>
+    </header><!-- End Header -->
+	
+    <!-- Start Page Title Section -->
+    <div class="page-ttl">
+        <div class="layer-stretch">
+            <div class="page-ttl-container">
+                <p></p>
+                <h1>Diagnose</h1>
+                <p><a href="/">Home</a> &#8594; <span>Diagnose</span></p>
+            </div>
+        </div>
+    </div><!-- End Page Title Section -->
+	
+    <!-- Start Diagnose Section -->
+
+    <div id="tabs">
+        <div class="theme-material-card">
+                <ul class="nav nav-tabs">
+                    <li class="nav-item">
+                        <a class="nav-link active" onclick = "errors()" href="#CKD" role="tab" data-toggle="tab">Diagnose CKD</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick = "errors()" href="#DM" role="tab" data-toggle="tab">Diagnose diabetes</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick = "errors()" href="#CHD" role="tab" data-toggle="tab">Diagnose CHD</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick = "errors()" href="#RA" role="tab" data-toggle="tab">Diagnose RA</a>
+                    </li>
+                    <li class="nav-item">
+		        <a class="nav-link" onclick = "errors()" href="#Asthma" role="tab" data-toggle="tab">Diagnose Asthma</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" onclick = "errors()" href="#TC" role="tab" data-toggle="tab">Diagnose Thyroid Cancer</a>
+                    </li>
+		    <li class="nav-item">
+                        <a class="nav-link" onclick = "errors()" href="#Schizophrenia" role="tab" data-toggle="tab">Diagnose Schizophrenia</a>
+		    </li>
+
+		    <li class="nav-item">
+			<a class="nav-link"  onclick="errors()" href="#Hypothyroidism" role="tab" data-toggle="tab">Diagnose Hypothyroidism</a>
+            <li class="nav-item">
+            <a class="nav-link"  onclick="errors()" href="#ProstateCancer" role="tab" data-toggle="tab">Diagnose Prostate Cancer</a>
+			</li>
+			<li class="nav-item">
+            <a class="nav-link"  onclick="errors()" href="#MS" role="tab" data-toggle="tab">Diagnose Multiple Sclerosis</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" onclick = "errors()" href="#Alzheimer" role="tab" data-toggle="tab">Diagnose Alzheimer</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" onclick = "errors()" href="#LungCancer" role="tab" data-toggle="tab">Diagnose Lung Cancer</a>
+			</li>
+			<li class="nav-item">
+			<a class="nav-link" onclick ="errors()" href="#Glaucoma" role="tab" data-toggle="tab">Diagnose Glaucoma</a>
+			</li>
+                </ul>
+
+<!-- //##################################### ADD TABS OF OUR DISEASES AND EDIT THEM ################################### -->
+            <div class="tab-content">
+			
+                               <!-- CKD tab -->
+                <div role="tabpanel" class="tab-pane active" id="CKD">
+                    <div class="p-2">
+                                <!-- Start Diagnose CKD Section -->
+                                <p class="font-14"></p>
+						<div id="form" class="">
+							<div class="layer-stretch">
+								<div class="layer-wrapper">
+								<div class="form-container">
+										<div class="sub-ttl">Diagnose CKD </div>
+										<span id = "ckdformerror"  class="text-center" style="color:red; font-size: 13px;"></span>
+                                    <form method="post" id="ckdform" onsubmit="return ckdformValidation()" action="/CKDdiagnosis">
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Blood Urea Nitrogen (BUN mg/dL) *</span>
+                                        <input class="mdl-textfield__input" type="text"  id="bun" name= "bun">
+                                        <label class="mdl-textfield__label" for="bun"></label>
+										</div>
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Creatinine (mg/dL) *</span>
+                                        <input class="mdl-textfield__input" type="text"  id="crt" name= "crt">
+                                        <label class="mdl-textfield__label" for="crt"></label>
+
+                                    </div>
+										<div class="form-submit" >
+										<input type="submit"value="Diagnose" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-primary button-lg">
+										</div>
+									</form>
+								</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+                </div>
+                                
+                                <!-- DM tab -->
+                <div role="tabpanel" class="tab-pane" id="DM">
+                    <div class="p-2">
+                                <!-- Start Diagnose diabetes Section -->
+                                <p class="font-14"></p>
+                        <div class="layer-stretch">
+							<div class="layer-wrapper">
+								<div class="form-container">
+                                    <div class="sub-ttl">Diagnose Diabetes </div>
+									<span id = "dmformerror"  class="text-center" style="color:red; font-size: 13px;"></span>
+                                <form method="post"  id="DMform" onsubmit="return dmformValidation()" action="/DMdiagnosis">
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Sugar Level (Glucose mg/dl) *</span>
+                                        <input class="mdl-textfield__input" type="text" id="slg" name="slg">
+                                        <label class="mdl-textfield__label" for="slg"></label>
+                                        <span class="mdl-textfield__error" id="diabetesError"></span>
+                                    </div>
+
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Hematocrit Level (HCT%) *</span>
+                                        <input class="mdl-textfield__input" type="text" id="hct" name="hct">
+                                        <label class="mdl-textfield__label" for="hct"></label>
+                                        <span class="mdl-textfield__error" id="diabetesError"></span>
+                                    </div>
+
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Mean Platelet Volume *</span>
+                                        <input class="mdl-textfield__input" type="text" id="mpv" name="mpv">
+                                        <label class="mdl-textfield__label" for="mpv"></label>
+                                        <span class="mdl-textfield__error" id="diabetesError"></span>
+                                    </div>
+
+									<div class="form-submit">
+									<input type="submit"   value="Diagnose" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-primary button-lg">
+									</div>
+								</form>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+								<!-- CHD tab -->
+                <div role="tabpanel" class="tab-pane" id="CHD">
+                    <div class="p-2">
+                                <!-- Start Diagnose CHD Section -->
+                                 <p class="font-14"></p>
+						<div id="form" class="">
+							<div class="layer-stretch">
+								<div class="layer-wrapper">
+								<div class="form-container">
+                                    <div class="sub-ttl">Diagnose CHD </div>
+                                    <span id = "chdformerror"  class="text-center" style="color:red; font-size: 13px;"></span>
+								<form method="post" id="chdform" onsubmit="return chdformValidation()" action="/CHDdiagnosis">
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-male"></i><span style = "margin-top = 4em;" class ="text-left" >Gender *</span>
+                                            <select class="mdl-selectfield__select" id="genderCHD" name="genderCHD">
+                                                <option value=""></option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+										<label class="mdl-selectfield__label" for="genderCHD"></label>
+                                    </div>
+                                   
+								   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Age *</span>
+                                        <input class="mdl-textfield__input" type="text" id="ageCHD" name="ageCHD">
+                                        <label class="mdl-textfield__label" for="ageCHD"></label>
+                                        <span class="mdl-textfield__error" id="chdformerror"></span>
+                                    </div>
+
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Blood Urea Nitrogen  *</span>
+                                        <input class="mdl-textfield__input" type="text" id="bunCHD" name="bunCHD">
+                                        <label class="mdl-textfield__label" for="bunCHD"></label>
+                                        <span class="mdl-textfield__error" id="chdformerror"></span>
+                                    </div>
+
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Direct Bilirubin  *</span>
+                                        <input class="mdl-textfield__input" type="text" id="dbiliCHD" name="dbiliCHD">
+                                        <label class="mdl-textfield__label" for="dbiliCHD"></label>
+                                        <span class="mdl-textfield__error" id="chdformerror"></span>
+                                    </div>
+
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Creat *</span>
+                                        <input class="mdl-textfield__input" type="text" id="creatCHD" name="creatCHD">
+                                        <label class="mdl-textfield__label" for="creatCHD"></label>
+                                        <span class="mdl-textfield__error" id="chdformerror"></span>
+                                    </div>
+
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Albumin *</span>
+                                        <input class="mdl-textfield__input" type="text" id="albuminCHD" name="albuminCHD">
+                                        <label class="mdl-textfield__label" for="albuminCHD"></label>
+                                        <span class="mdl-textfield__error" id="chdformerror"></span>
+                                    </div>
+
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Total Bilirubin  *</span>
+                                        <input class="mdl-textfield__input" type="text" id="tbiliCHD" name="tbiliCHD">
+                                        <label class="mdl-textfield__label" for="tbiliCHD"></label>
+                                        <span class="mdl-textfield__error" id="chdformerror"></span>
+                                    </div>
+                                    <div class="form-submit">
+                                        <input type="submit"   value="Diagnose" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-primary button-lg">
+                                    </div>
+                                </form>
+								</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+                </div>
+
+								<!-- RA tab -->
+                <div role="tabpanel" class="tab-pane" id="RA">
+                    <div class="p-2">
+								<!-- Start Diagnose RA Section -->
+								<p class="font-14"></p>
+						<div id="form" class="">
+							<div class="layer-stretch">
+								<div class="layer-wrapper">
+									<div class="form-container">
+										<div class="sub-ttl">Diagnose RA </div>
+										<span id = "raformerror"  class="text-center" style="color:red; font-size: 13px;"></span>
+									<form method="post" id="raform" onsubmit="return raformValidation()" action="/RAdiagnosis">
+                                 
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-male"></i><span style = "margin-top = 4em;" class ="text-left" >Gender *</span>
+                                            <select class="mdl-selectfield__select" id="genderRA" name="genderRA">
+                                                <option value=""></option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                    <label class="mdl-selectfield__label" for="genderRA"></label>
+                                    </div>
+                                 
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Age *</span>
+                                        <input class="mdl-textfield__input" type="text" id="ageRA" name="ageRA">
+                                        <label class="mdl-textfield__label" for="ageRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+                                  
+                                   
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Albumin *</span>
+                                        <input class="mdl-textfield__input" type="text" id="albuminRA" name="albuminRA">
+                                        <label class="mdl-textfield__label" for="albuminRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Alkaline phosphatase *</span>
+                                        <input class="mdl-textfield__input" type="text" id="AlkPhosRA" name="AlkPhosRA">
+                                        <label class="mdl-textfield__label" for="AlkPhosRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Blood Urea Nitrogen  *</span>
+                                        <input class="mdl-textfield__input" type="text" id="bunRA" name="bunRA">
+                                        <label class="mdl-textfield__label" for="bunRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Chloride *</span>
+                                        <input class="mdl-textfield__input" type="text" id="ClRA" name="ClRA">
+                                        <label class="mdl-textfield__label" for="ClRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Carbon dioxide *</span>
+                                        <input class="mdl-textfield__input" type="text" id="CO2RA" name="CO2RA">
+                                        <label class="mdl-textfield__label" for="CO2RA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Creat *</span>
+                                        <input class="mdl-textfield__input" type="text" id="creatRA" name="creatRA">
+                                        <label class="mdl-textfield__label" for="creatRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Direct Bilirubin  *</span>
+                                        <input class="mdl-textfield__input" type="text" id="dbiliRA" name="dbiliRA">
+                                        <label class="mdl-textfield__label" for="dbiliRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Serum glutamic oxalacetic transaminase  *</span>
+                                        <input class="mdl-textfield__input" type="text" id="GGTPRA" name="GGTPRA">
+                                        <label class="mdl-textfield__label" for="GGTPRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Hemoglobin *</span>
+                                        <input class="mdl-textfield__input" type="text" id="hgbRA" name="hgbRA">
+                                        <label class="mdl-textfield__label" for="hgbRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Hematocrit Level *</span>
+                                        <input class="mdl-textfield__input" type="text" id="hctRA" name="hctRA">
+                                        <label class="mdl-textfield__label" for="hctRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Potassium *</span>
+                                        <input class="mdl-textfield__input" type="text" id="KRA" name="KRA">
+                                        <label class="mdl-textfield__label" for="KRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Lactic Acid Dehydrogenase *</span>
+                                        <input class="mdl-textfield__input" type="text" id="LDHRA" name="LDHRA">
+                                        <label class="mdl-textfield__label" for="LDHRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Mean corpuscular hemoglobin *</span>
+                                        <input class="mdl-textfield__input" type="text" id="MCHRA" name="MCHRA">
+                                        <label class="mdl-textfield__label" for="MCHRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Mean corpuscular hemoglobin concentration *</span>
+                                        <input class="mdl-textfield__input" type="text" id="MCHCRA" name="MCHCRA">
+                                        <label class="mdl-textfield__label" for="MCHCRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Mean corpuscular volume *</span>
+                                        <input class="mdl-textfield__input" type="text" id="MCVRA" name="MCVRA">
+                                        <label class="mdl-textfield__label" for="MCVRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Mean platelet volume *</span>
+                                        <input class="mdl-textfield__input" type="text" id="MPVRA" name="MPVRA">
+                                        <label class="mdl-textfield__label" for="MPVRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">	
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Sodium *</span>
+                                        <input class="mdl-textfield__input" type="text" id="NaRA" name="NaRA">
+                                        <label class="mdl-textfield__label" for="NaRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Platelet count *</span>
+                                        <input class="mdl-textfield__input" type="text" id="PltRA" name="PltRA">
+                                        <label class="mdl-textfield__label" for="PltRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Red blood cell count *</span>
+                                        <input class="mdl-textfield__input" type="text" id="RBCRA" name="RBCRA">
+                                        <label class="mdl-textfield__label" for="RBCRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                   </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">			
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Red cell distribution width *</span>
+                                        <input class="mdl-textfield__input" type="text" id="RDWRA" name="RDWRA">
+                                        <label class="mdl-textfield__label" for="RDWRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Serum glutamic-oxaloacetic transaminase *</span>
+                                        <input class="mdl-textfield__input" type="text" id="SGOTRA" name="SGOTRA">
+                                        <label class="mdl-textfield__label" for="SGOTRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Serum glutamic-pyruvic transaminase *</span>
+                                        <input class="mdl-textfield__input" type="text" id="SGPTRA" name="SGPTRA">
+                                        <label class="mdl-textfield__label" for="SGPTRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Total bilirubin *</span>
+                                        <input class="mdl-textfield__input" type="text" id="TbiliRA" name="TbiliRA">
+                                        <label class="mdl-textfield__label" for="TbiliRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+
+										<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Total protein *</span>
+                                        <input class="mdl-textfield__input" type="text" id="TProteinRA" name="TProteinRA">
+                                        <label class="mdl-textfield__label" for="TProteinRA"></label>
+                                        <span class="mdl-textfield__error" id="RAError"></span>
+                                    </div>
+										<div class="form-submit" >
+										<input type="submit"   value="Diagnose"
+										class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-primary button-lg">
+										</div>
+									</form>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+                </div>
+
+                            	<!-- Asthma  tab -->
+				<div role="tabpanel" class="tab-pane" id="Asthma">
+                    <div class="p-2">
+								<!-- Start Diagnose Asthma Section -->
+                                <p class="font-14"></p>
+						<div id="form" class="">
+							<div class="layer-stretch">
+								<div class="layer-wrapper">
+								<div class="form-container">
+									<div class="sub-ttl">Diagnose Asthma </div>
+									<span id = "asformerror"  class="text-center" style="color:red; font-size: 13px;"></span>
+                                <form method="post" id = "asform" onsubmit="return asformValidation()"   action="/asdiagnosis">
+											<!-- genderAsthma -->  
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-male"></i><span style = "margin-top = 4em;" class ="text-left" > Gender *</span>
+                                         <select class="mdl-selectfield__select" id="genderAsthma" name="genderAsthma">
+                                              <option value=""></option>
+                                              <option value="Male">Male</option>
+                                              <option value="Female">Female</option>
+                                          </select>
+                                         <label class="mdl-selectfield__label" for="genderAsthma"></label>
+                                        <span class="mdl-textfield__error" id="asthmaError"></span>
+                                    </div>
+											<!-- ageAsthma --> 
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Age *</span>
+                                        <input class="mdl-textfield__input" type="text" id="ageAsthma" name="ageAsthma">
+                                        <label class="mdl-textfield__label" for="ageAsthma"></label>
+                                        <span class="mdl-textfield__error" id="asthmaError"></span>
+                                    </div>											
+									
+											<!-- BasophilsAsthma --> 
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Basophil *</span>
+                                        <input class="mdl-textfield__input" type="text" id="BasophilsAsthma" name="BasophilsAsthma">
+                                        <label class="mdl-textfield__label" for="BasophilsAsthma"></label>
+                                        <span class="mdl-textfield__error" id="asthmaError"></span>
+                                    </div>
+											<!-- HematocritAsthma --> 
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Hematocrit *</span>
+                                        <input class="mdl-textfield__input" type="text" id="HematocritAsthma" name="HematocritAsthma">
+                                        <label class="mdl-textfield__label" for="HematocritAsthma"></label>
+                                        <span class="mdl-textfield__error" id="asthmaError"></span>
+                                    </div>
+											<!-- HemoglobinAsthma --> 
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Hemoglobin *</span>
+                                        <input class="mdl-textfield__input" type="text" id="HemoglobinAsthma" name="HemoglobinAsthma">
+                                        <label class="mdl-textfield__label" for="HemoglobinAsthma"></label>
+                                        <span class="mdl-textfield__error" id="asthmaError"></span>
+                                    </div>
+											<!-- MCHAsthma --> 
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Mean Corpuscular Hemoglobin *</span>
+                                        <input class="mdl-textfield__input" type="text" id="MCHAsthma" name="MCHAsthma">
+                                        <label class="mdl-textfield__label" for="MCHAsthma"></label>
+                                        <span class="mdl-textfield__error" id="asthmaError"></span>
+                                    </div>
+											<!-- MCHCAsthma --> 
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Mean Corpuscular Hemoglobin Concentration *</span>
+                                        <input class="mdl-textfield__input" type="text" id="MCHCAsthma" name="MCHCAsthma">
+                                        <label class="mdl-textfield__label" for="MCHCAsthma"></label>
+                                        <span class="mdl-textfield__error" id="asthmaError"></span>
+                                    </div>
+											<!-- MPVAsthma --> 
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Mean platelet volume *</span>
+                                        <input class="mdl-textfield__input" type="text" id="MPVAsthma" name="MPVAsthma">
+                                        <label class="mdl-textfield__label" for="MPVAsthma"></label>
+                                        <span class="mdl-textfield__error" id="asthmaError"></span>
+                                    </div>
+											<!-- WBCAsthma --> 
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >White Blood Cell *</span>
+                                        <input class="mdl-textfield__input" type="text" id="WBCAsthma" name="WBCAsthma">
+                                        <label class="mdl-textfield__label" for="WBCAsthma"></label>
+                                        <span class="mdl-textfield__error" id="asthmaError"></span>
+                                    </div>
+									
+									<div class="form-submit" >
+										<input type="submit"   value="Diagnose" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-primary button-lg">
+									</div>
+								</form>
+								</div>
+								</div>
+							</div>
+						</div>
+					</div>
+                </div>
+                      
+<!-- Thyroid Cancer tab -->
+				<div role="tabpanel" class="tab-pane" id="TC">
+                    <div class="p-2">
+                                <!-- Start Diagnose Thyroid Section -->
+                                <p class="font-14"></p>
+						<div id="form" class="">
+							<div class="layer-stretch">
+								<div class="layer-wrapper">
+									<div class="form-container">
+										<div class="sub-ttl">Diagnose Thyroid Cancer </div>
+										<span id = "tcformerror"  class="text-center" style="color:red; font-size: 13px;"></span>
+									<form method="post" id = "tcform" onsubmit="return tcformValidation()" action="/tcdiagnosis">
+										   
+											<!-- genderThyroid -->  
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-male"></i><span style = "margin-top = 4em;" class ="text-left" > Gender *</span>
+                                         <select class="mdl-selectfield__select" id="genderThyroid" name="genderThyroid">
+                                              <option value=""></option>
+                                              <option value="Male">Male</option>
+                                              <option value="Female">Female</option>
+                                          </select>
+                                         <label class="mdl-selectfield__label" for="genderThyroid"></label>
+										<span class="mdl-textfield__error" id="tcError"></span>
+                                    </div>
+											<!-- ageThyroid --> 
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Age *</span>
+                                        <input class="mdl-textfield__input" type="text" id="ageThyroid" name="ageThyroid">
+                                        <label class="mdl-textfield__label" for="ageThyroid"></label>
+                                        <span class="mdl-textfield__error" id="tcError"></span>
+                                    </div>											
+									
+											<!-- HematocritThyroid --> 
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Hematocrit *</span>
+                                        <input class="mdl-textfield__input" type="text" id="HematocritThyroid" name="HematocritThyroid">
+                                        <label class="mdl-textfield__label" for="HematocritThyroid"></label>
+                                        <span class="mdl-textfield__error" id="tcError"></span>
+                                    </div>
+											<!-- MCHCThyroid--> 
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Mean Corpuscular Hemoglobin Concentration *</span>
+                                        <input class="mdl-textfield__input" type="text" id="MCHCThyroid" name="MCHCThyroid">
+                                        <label class="mdl-textfield__label" for="MCHCThyroid"></label>
+                                        <span class="mdl-textfield__error" id="tcError"></span>
+                                    </div>
+											<!-- MPVThyroid --> 
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Mean platelet volume *</span>
+                                        <input class="mdl-textfield__input" type="text" id="MPVThyroid" name="MPVThyroid">
+                                        <label class="mdl-textfield__label" for="MPVThyroid"></label>
+                                        <span class="mdl-textfield__error" id="tcError"></span>
+                                    </div>
+											<!-- RBCThyroid --> 
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Red Blood Cell count *</span>
+                                        <input class="mdl-textfield__input" type="text" id="RBCThyroid" name="RBCThyroid">
+                                        <label class="mdl-textfield__label" for="RBCThyroid"></label>
+                                        <span class="mdl-textfield__error" id="tcError"></span>
+                                    </div>
+                                            <!-- WBCThyroid * -->  
+									<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-male"></i><span style = "margin-top = 4em;" class ="text-left" >white Blood Cell count *</span>
+                                        <input class="mdl-textfield__input" type="text" id="WBCThyroid" name="WBCThyroid">
+                                        <label class="mdl-textfield__label" for="WBCThyroid"></label>
+                                        <span class="mdl-textfield__error" id="tcError"></span>
+                                    </div>     
+                                   
+									<div class="form-submit" >
+										<input type="submit"   value="Diagnose" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-primary button-lg">
+									</div>
+										
+									</form>
+									</div>
+								</div>
+							</div>
+						</div>
+                    </div>
+				</div>
+								<!-- Schizophrenia  tab -->
+                <div role="tabpanel" class="tab-pane" id="Schizophrenia">
+					<div class="p-2">
+                                <!-- Start Diagnose Schizophrenia Section -->
+                                <p class="font-14">
+						<div id="form" class="">
+							<div class="layer-stretch">
+								<div class="layer-wrapper">
+								<div class="form-container">
+                                    <div class="sub-ttl">Diagnose Schizophrenia </div>
+                                    <span id = "scformerror"  class="text-center" style="color:red; font-size: 13px;"></span>
+                                    <form method="post" id="scform" onsubmit="return scformValidation()" action="/Schizophreniadiagnosis">
+                                       <!--genderSchizophrenia -->
+									   <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+											<i class="fa fa-male"></i><span style = "margin-top = 4em;" class ="text-left" >Gender *</span>
+                                            <select class="mdl-selectfield__select" id="genderSchizophrenia" name="genderSchizophrenia">
+                                                <option value=""></option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+											<label class="mdl-selectfield__label" for="genderSchizophrenia"></label>
+											<span class="mdl-textfield__error" id="SchizophreniaError"></span>
+										</div>
+										<!--neuSchizophrenia-->
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                            <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >neuroglioblastoma cell line *</span>
+                                            <input class="mdl-textfield__input" type="text" id="neuSchizophrenia" name="neuSchizophrenia">
+                                            <label class="mdl-textfield__label" for="neuSchizophrenia"></label>
+                                            <span class="mdl-textfield__error" id="SchizophreniaError"></span>
+                                        </div>
+										<!--lymSchizophrenia-->
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                            <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Lymphocytes *</span>
+                                            <input class="mdl-textfield__input" type="text" id="lymSchizophrenia" name="lymSchizophrenia">
+                                            <label class="mdl-textfield__label" for="lymSchizophrenia"></label>
+                                            <span class="mdl-textfield__error" id="SchizophreniaError"></span>
+                                        </div>
+											<!--hgbSchizophrenia-->
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                            <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Hemoglobin Level *</span>
+                                            <input class="mdl-textfield__input" type="text" id="hgbSchizophrenia" name="hgbSchizophrenia">
+                                            <label class="mdl-textfield__label" for="hgbSchizophrenia"></label>
+                                            <span class="mdl-textfield__error" id="SchizophreniaError"></span>
+                                        </div>
+											<!--hctSchizophrenia-->
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                            <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Hematocrit Level *</span>
+                                            <input class="mdl-textfield__input" type="text" id="hctSchizophrenia" name="hctSchizophrenia">
+                                            <label class="mdl-textfield__label" for="hctSchizophrenia"></label>
+                                            <span class="mdl-textfield__error" id="SchizophreniaError"></span>
+                                        </div>
+											<!--mchcSchizophrenia-->
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                            <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Mean corpuscular hemoglobin concentration *</span>
+                                            <input class="mdl-textfield__input" type="text" id="mchcSchizophrenia" name="mchcSchizophrenia">
+                                            <label class="mdl-textfield__label" for="mchcSchizophrenia"></label>
+                                            <span class="mdl-textfield__error" id="SchizophreniaError"></span>
+                                        </div>
+												<!--rdwSchizophrenia-->
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                            <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >red cell distribution width *</span>
+                                            <input class="mdl-textfield__input" type="text" id="rdwSchizophrenia" name="rdwSchizophrenia">
+                                            <label class="mdl-textfield__label" for="rdwSchizophrenia"></label>
+                                            <span class="mdl-textfield__error" id="SchizophreniaError"></span>
+                                        </div>
+												<!--rdwSchizophrenia-->
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                            <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >UREA *</span>
+                                            <input class="mdl-textfield__input" type="text" id="ureaSchizophrenia" name="ureaSchizophrenia">
+                                            <label class="mdl-textfield__label" for="ureaSchizophrenia"></label>
+                                            <span class="mdl-textfield__error" id="SchizophreniaError"></span>
+                                        </div>
+                                    
+									<div class="form-submit" >
+										<input type="submit" value="Diagnose" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-primary button-lg">
+									</div>
+                                    </form>
+                                </div>
+								</div>
+							</div>
+						</div>
+                    </div>
+				</div>
+				<!-- end of SCH-->
+
+
+
+
+								<!-- Hypothyroidism tab -->
+                <div role="tabpanel" class="tab-pane" id="Hypothyroidism">
+                    <div class="p-2">
+                                <!-- Start Diagnose Hypothyroidism Section -->
+                                <p class="font-14"></p>
+                        <div class="layer-stretch">
+							<div class="layer-wrapper">
+								<div class="form-container">
+                                    <div class="sub-ttl">Diagnose Hypothyroidism </div>
+									<span id = "Hypoformerror"  class="text-center" style="color:red; font-size: 13px;"></span>
+                                <form method="post"  id="Hypoform" onsubmit="return HypoformValidation()" action="/Hypodiagnosis">
+
+
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" > Age *</span>
+                                        <input class="mdl-textfield__input" type="text" id="ageHypo" name="ageHypo">
+                                        <label class="mdl-textfield__label" for="ageHypo"></label>
+                                        <span class="mdl-textfield__error" id="HypoError"></span>
+                                    </div>
+
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" > BP- Systolic *</span>
+                                        <input class="mdl-textfield__input" type="text" id="BPSHypo" name="BPSHypo">
+                                        <label class="mdl-textfield__label" for="BPSHypo"></label>
+                                        <span class="mdl-textfield__error" id="HypoError"></span>
+                                    </div>
+
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Respiratory Rate *</span>
+                                        <input class="mdl-textfield__input" type="text" id="RespHypo" name="RespHypo">
+                                        <label class="mdl-textfield__label" for="RespHypo"></label>
+                                        <span class="mdl-textfield__error" id="HypoError"></span>
+                                    </div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >MCV *</span>
+                                        <input class="mdl-textfield__input" type="text" id="MCVHypo" name="MCVHypo">
+                                        <label class="mdl-textfield__label" for="MCVHypo"></label>
+                                        <span class="mdl-textfield__error" id="HypoError"></span>
+                                    </div>
+				<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Pulse Ox *</span>
+                                        <input class="mdl-textfield__input" type="text" id="POHypo" name="POHypo">
+                                        <label class="mdl-textfield__label" for="POHypo"></label>
+                                        <span class="mdl-textfield__error" id="HypoError"></span>
+                                    </div>
+
+									<div class="form-submit">
+									<input type="submit"   value="Diagnose" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-primary button-lg">
+									</div>
+								</form>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+					<!-- PC tab -->
+                                <div role="tabpanel" class="tab-pane" id="ProstateCancer">
+                                    <div class="p-2">
+                                                <!-- Start Diagnose PC Section -->
+                                                <p class="font-14"></p>
+                                        <div id="form" class="">
+                                            <div class="layer-stretch">
+                                                <div class="layer-wrapper">
+                                                    <div class="form-container">
+                                                        <div class="sub-ttl">Diagnose Prostate Cancer </div>
+                                                        <span id = "pcformerror"  class="text-center" style="color:red; font-size: 13px;"></span>
+                                                    <form method="post" id="pcform" onsubmit="return pcformValidation()" action="/PCdiagnosis">
+                                                        
+                                                                  
+                                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Perimeter *</span>
+                                                        <input class="mdl-textfield__input" type="text" id="PCperimeter" name="PCperimeter">
+                                                        <label class="mdl-textfield__label" for="PCperimeter"></label>
+                                                        <span class="mdl-textfield__error" id="PCError"></span>
+														</div>
+                
+                                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Area  *</span>
+                                                        <input class="mdl-textfield__input" type="text" id="PCarea" name="PCarea">
+                                                        <label class="mdl-textfield__label" for="PCarea"></label>
+                                                        <span class="mdl-textfield__error" id="PCError"></span>
+														</div>
+                
+                                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Smoothness *</span>
+                                                        <input class="mdl-textfield__input" type="text" id="PCsmoothness" name="PCsmoothness">
+                                                        <label class="mdl-textfield__label" for="PCsmoothness"></label>
+                                                        <span class="mdl-textfield__error" id="PCError"></span>
+														</div>
+                
+                                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Compactness *</span>
+                                                        <input class="mdl-textfield__input" type="text" id="PCcompactness" name="PCcompactness">
+                                                        <label class="mdl-textfield__label" for="PCcompactness"></label>
+                                                        <span class="mdl-textfield__error" id="PCError"></span>
+														</div>
+                
+                                                        <div class="form-submit" >
+                                                        <input type="submit"   value="Diagnose"
+                                                        class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-primary button-lg">
+                                                        </div>
+                                                    </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+								
+								<!-- MS tab -->
+                                <div role="tabpanel" class="tab-pane" id="MS">
+                                    <div class="p-2">
+                                                <!-- Start Diagnose MS Section -->
+                                                <p class="font-14"></p>
+                                        <div id="form" class="">
+                                            <div class="layer-stretch">
+                                                <div class="layer-wrapper">
+                                                    <div class="form-container">
+                                                        <div class="sub-ttl">Diagnose Multiple Sclerosis </div>
+                                                        <span id = "msformerror"  class="text-center" style="color:red; font-size: 13px;"></span>
+                                                    <form method="post" id="msform" onsubmit="return msformValidation()" action="/MSdiagnosis">
+                                                        
+                                                                  
+													<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+													<i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Height (m) *</span>
+													<input class="mdl-textfield__input" type="text" id="MSheight" name="MSheight">
+													<label class="mdl-textfield__label" for="MSheight"></label>
+													<span class="mdl-textfield__error" id="MSError"></span>
+													</div>
+													
+													<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+													<i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >SSS circumfrence mm *</span>
+													<input class="mdl-textfield__input" type="text" id="MSSSS" name="MSSSS">
+													<label class="mdl-textfield__label" for="MSSSS"></label>
+													<span class="mdl-textfield__error" id="MSError"></span>
+													</div>
+													
+													<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+													<i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Right transverse sinus area mm2 *</span>
+													<input class="mdl-textfield__input" type="text" id="MSRTSA" name="MSRTSA">
+													<label class="mdl-textfield__label" for="MSRTSA"></label>
+													<span class="mdl-textfield__error" id="MSError"></span>
+													</div>
+													
+													<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+													<i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Left sigmoid circumfrence mm *</span>
+													<input class="mdl-textfield__input" type="text" id="MSLSC" name="MSLSC">
+													<label class="mdl-textfield__label" for="MSLSC"></label>
+													<span class="mdl-textfield__error" id="MSError"></span>
+													</div>
+													
+													<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+													<i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Right distal sigmoid area mm2 *</span>
+													<input class="mdl-textfield__input" type="text" id="MSRDSA" name="MSRDSA">
+													<label class="mdl-textfield__label" for="MSRDSA"></label>
+													<span class="mdl-textfield__error" id="MSError"></span>
+													</div>
+													
+													<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+													<i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Right distal sigmoid circumfrence mm *</span>
+													<input class="mdl-textfield__input" type="text" id="MSRDSC" name="MSRDSC">
+													<label class="mdl-textfield__label" for="MSRDSC"></label>
+													<span class="mdl-textfield__error" id="MSError"></span>
+													</div>
+													
+													<div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+													<i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Left optic nerve sheath diameter mm *</span>
+													<input class="mdl-textfield__input" type="text" id="MSLONSD" name="MSLONSD">
+													<label class="mdl-textfield__label" for="MSLONSD"></label>
+													<span class="mdl-textfield__error" id="MSError"></span>
+													</div>
+                
+                                                        <div class="form-submit" >
+                                                        <input type="submit"   value="Diagnose"
+                                                        class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-primary button-lg">
+                                                        </div>
+                                                    </form>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+						
+					<!-- Alzheimer tab -->
+                <div role="tabpanel" class="tab-pane" id="Alzheimer">
+                    <div class="p-2">
+                                <!-- Start Diagnose Alzheimer Section -->
+                                <p class="font-14"></p>
+                        <div class="layer-stretch">
+							<div class="layer-wrapper">
+								<div class="form-container">
+                                    <div class="sub-ttl">Diagnose Alzheimer </div>
+									<span id = "ADformerror"  class="text-center" style="color:red; font-size: 13px;"></span>
+                                <form method="post"  id="ADform" onsubmit="return ADformValidation()" action="/ADdiagnosis">
+
+
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-male"></i><span style = "margin-top = 4em;" class ="text-left" > Gender *</span>
+                                            <select class="mdl-selectfield__select" id="genderAD" name="genderAD">
+                                                <option value=""></option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                            <label class="mdl-selectfield__label" for="genderAD"></label>
+                                        <span class="mdl-textfield__error" id="ADError"></span>
+                                    </div>
+                                    
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Age *</span>
+                                        <input class="mdl-textfield__input" type="text" id="AgeAD" name="AgeAD">
+                                        <label class="mdl-textfield__label" for="AgeAD"></label>
+                                        <span class="mdl-textfield__error" id="ADError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Pulse *</span>
+                                        <input class="mdl-textfield__input" type="text" id="PulseAD" name="PulseAD">
+                                        <label class="mdl-textfield__label" for="PulseAD"></label>
+                                        <span class="mdl-textfield__error" id="ADError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Respiratory_Rate *</span>
+                                        <input class="mdl-textfield__input" type="text" id="Respiratory_RateAD" name="Respiratory_RateAD">
+                                        <label class="mdl-textfield__label" for="Respiratory_RateAD"></label>
+                                        <span class="mdl-textfield__error" id="ADError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >BP_Diastolic *</span>
+                                        <input class="mdl-textfield__input" type="text" id="BP_DiastolicAD" name="BP_DiastolicAD">
+                                        <label class="mdl-textfield__label" for="BP_DiastolicAD"></label>
+                                        <span class="mdl-textfield__error" id="ADError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >wbc *</span>
+                                        <input class="mdl-textfield__input" type="text" id="wbcAD" name="wbcAD">
+                                        <label class="mdl-textfield__label" for="wbcAD"></label>
+                                        <span class="mdl-textfield__error" id="ADError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >rbc *</span>
+                                        <input class="mdl-textfield__input" type="text" id="rbcAD" name="rbcAD">
+                                        <label class="mdl-textfield__label" for="rbcAD"></label>
+                                        <span class="mdl-textfield__error" id="ADError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Hemoglobin *</span>
+                                        <input class="mdl-textfield__input" type="text" id="HemoglobinAD" name="HemoglobinAD">
+                                        <label class="mdl-textfield__label" for="HemoglobinAD"></label>
+                                        <span class="mdl-textfield__error" id="ADError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >Hematocrit *</span>
+                                        <input class="mdl-textfield__input" type="text" id="HematocritAD" name="HematocritAD">
+                                        <label class="mdl-textfield__label" for="HematocritAD"></label>
+                                        <span class="mdl-textfield__error" id="ADError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >MCV *</span>
+                                        <input class="mdl-textfield__input" type="text" id="MCVAD" name="MCVAD">
+                                        <label class="mdl-textfield__label" for="MCVAD"></label>
+                                        <span class="mdl-textfield__error" id="ADError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >MCH *</span>
+                                        <input class="mdl-textfield__input" type="text" id="MCHAD" name="MCHAD">
+                                        <label class="mdl-textfield__label" for="MCHAD"></label>
+                                        <span class="mdl-textfield__error" id="ADError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >RDW *</span>
+                                        <input class="mdl-textfield__input" type="text" id="RDWAD" name="RDWAD">
+                                        <label class="mdl-textfield__label" for="RDWAD"></label>
+                                        <span class="mdl-textfield__error" id="ADError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >MPV *</span>
+                                        <input class="mdl-textfield__input" type="text" id="MPVAD" name="MPVAD">
+                                        <label class="mdl-textfield__label" for="MPVAD"></label>
+                                        <span class="mdl-textfield__error" id="ADError"></span>
+                                        </div>
+                                
+
+									<div class="form-submit">
+									<input type="submit"   value="Diagnose" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-primary button-lg">
+									</div>
+								</form>
+								</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Glaucoma tab -->
+                <div role="tabpanel" class="tab-pane" id="Glaucoma">
+                    <div class="p-2">
+                                <!-- Start Diagnose Glaucoma Section -->
+                                <p class="font-14"></p>
+                        <div class="layer-stretch">
+                            <div class="layer-wrapper">
+                                <div class="form-container">
+                                    <div class="sub-ttl">Diagnose Glaucoma </div>
+                                    <span id = "Glaucomaformerror"  class="text-center" style="color:red; font-size: 13px;"></span>
+                                <form method="post"  id="Glaucomaform" onsubmit="return GlaucomaformValidation()" action="/Glaucomadiagnosis">
+
+
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >at *</span>
+                                        <input class="mdl-textfield__input" type="text" id="atG" name="atG">
+                                        <label class="mdl-textfield__label" for="atG"></label>
+                                        <span class="mdl-textfield__error" id="GlaucomaError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >ean *</span>
+                                        <input class="mdl-textfield__input" type="text" id="eanG" name="eanG">
+                                        <label class="mdl-textfield__label" for="eanG"></label>
+                                        <span class="mdl-textfield__error" id="GlaucomaError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >mhci *</span>
+                                        <input class="mdl-textfield__input" type="text" id="mhciG" name="mhciG">
+                                        <label class="mdl-textfield__label" for="mhciG"></label>
+                                        <span class="mdl-textfield__error" id="GlaucomaError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >vasi *</span>
+                                        <input class="mdl-textfield__input" type="text" id="vasiG" name="vasiG">
+                                        <label class="mdl-textfield__label" for="vasiG"></label>
+                                        <span class="mdl-textfield__error" id="GlaucomaError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >varg *</span>
+                                        <input class="mdl-textfield__input" type="text" id="vargG" name="vargG">
+                                        <label class="mdl-textfield__label" for="vargG"></label>
+                                        <span class="mdl-textfield__error" id="GlaucomaError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >vars *</span>
+                                        <input class="mdl-textfield__input" type="text" id="varsG" name="varsG">
+                                        <label class="mdl-textfield__label" for="varsG"></label>
+                                        <span class="mdl-textfield__error" id="GlaucomaError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >tmi *</span>
+                                        <input class="mdl-textfield__input" type="text" id="tmiG" name="tmiG">
+                                        <label class="mdl-textfield__label" for="tmiG"></label>
+                                        <span class="mdl-textfield__error" id="GlaucomaError"></span>
+                                        </div>   
+                                
+
+                                    <div class="form-submit">
+                                    <input type="submit"   value="Diagnose" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-primary button-lg">
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <!-- Lung Cancer tab -->
+                <div role="tabpanel" class="tab-pane" id="LungCancer">
+                    <div class="p-2">
+                                <!-- Start Diagnose  Lung Cancer Section -->
+                                <p class="font-14"></p>
+                        <div class="layer-stretch">
+                            <div class="layer-wrapper">
+                                <div class="form-container">
+                                    <div class="sub-ttl">Diagnose Lung Cancer </div>
+                                    <span id = "LCformerror"  class="text-center" style="color:red; font-size: 13px;"></span>
+                                <form method="post"  id="LCform" onsubmit="return LCformValidation()" action="/LCdiagnosis">
+
+
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-male"></i><span style = "margin-top = 4em;" class ="text-left" > Gender *</span>
+                                            <select class="mdl-selectfield__select" id="genderLC" name="genderLC">
+                                                <option value=""></option>
+                                                <option value="Male">Male</option>
+                                                <option value="Female">Female</option>
+                                            </select>
+                                            <label class="mdl-selectfield__label" for="genderLC"></label>
+                                        <span class="mdl-textfield__error" id="LCError"></span>
+                                    </div>
+                                    
+                                    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >age *</span>
+                                        <input class="mdl-textfield__input" type="text" id="ageLC" name="ageLC">
+                                        <label class="mdl-textfield__label" for="ageLC"></label>
+                                        <span class="mdl-textfield__error" id="LCError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >smoking *</span>
+                                        <input class="mdl-textfield__input" type="text" id="smokingLC" name="smokingLC">
+                                        <label class="mdl-textfield__label" for="smokingLC"></label>
+                                        <span class="mdl-textfield__error" id="LCError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >yellow_Fingers *</span>
+                                        <input class="mdl-textfield__input" type="text" id="yellow_FingersLC" name="yellow_FingersLC">
+                                        <label class="mdl-textfield__label" for="yellow_FingersLC"></label>
+                                        <span class="mdl-textfield__error" id="LCError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >anxiety *</span>
+                                        <input class="mdl-textfield__input" type="text" id="anxietyLC" name="anxietyLC">
+                                        <label class="mdl-textfield__label" for="anxietyLC"></label>
+                                        <span class="mdl-textfield__error" id="LCError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >wheezing *</span>
+                                        <input class="mdl-textfield__input" type="text" id="wheezingLC" name="wheezingLC">
+                                        <label class="mdl-textfield__label" for="wheezingLC"></label>
+                                        <span class="mdl-textfield__error" id="LCError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >peer_Pressure *</span>
+                                        <input class="mdl-textfield__input" type="text" id="peer_PressureLC" name="peer_PressureLC">
+                                        <label class="mdl-textfield__label" for="peer_PressureLC"></label>
+                                        <span class="mdl-textfield__error" id="LCError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >chronic_Disease *</span>
+                                        <input class="mdl-textfield__input" type="text" id="chronic_DiseaseLC" name="chronic_DiseaseLC">
+                                        <label class="mdl-textfield__label" for="chronic_DiseaseLC"></label>
+                                        <span class="mdl-textfield__error" id="LCError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >fatigue *</span>
+                                        <input class="mdl-textfield__input" type="text" id="fatigueLC" name="fatigueLC">
+                                        <label class="mdl-textfield__label" for="fatigueLC"></label>
+                                        <span class="mdl-textfield__error" id="LCError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >allergy *</span>
+                                        <input class="mdl-textfield__input" type="text" id="allergyLC" name="allergyLC">
+                                        <label class="mdl-textfield__label" for="allergyLC"></label>
+                                        <span class="mdl-textfield__error" id="LCError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >coughing *</span>
+                                        <input class="mdl-textfield__input" type="text" id="coughingLC" name="coughingLC">
+                                        <label class="mdl-textfield__label" for="coughingLC"></label>
+                                        <span class="mdl-textfield__error" id="LCError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >alcohol *</span>
+                                        <input class="mdl-textfield__input" type="text" id="alcoholLC" name="alcoholLC">
+                                        <label class="mdl-textfield__label" for="alcoholLC"></label>
+                                        <span class="mdl-textfield__error" id="LCError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >shortness_of_Breath *</span>
+                                        <input class="mdl-textfield__input" type="text" id="shortness_of_BreathLC" name="shortness_of_BreathLC">
+                                        <label class="mdl-textfield__label" for="shortness_of_BreathLC"></label>
+                                        <span class="mdl-textfield__error" id="LCError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >swallowing_Difficulty *</span>
+                                        <input class="mdl-textfield__input" type="text" id="swallowing_DifficultyLC" name="swallowing_DifficultyLC">
+                                        <label class="mdl-textfield__label" for="swallowing_DifficultyLC"></label>
+                                        <span class="mdl-textfield__error" id="LCError"></span>
+                                        </div>
+                                        
+                                        <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label form-input-icon text-left">
+                                        <i class="fa fa-angle-double-down"></i><span style = "margin-top = 4em;" class ="text-left" >chest_Pain *</span>
+                                        <input class="mdl-textfield__input" type="text" id="chest_PainLC" name="chest_PainLC">
+                                        <label class="mdl-textfield__label" for="chest_PainLC"></label>
+                                        <span class="mdl-textfield__error" id="LCError"></span>
+                                        </div>
+                                
+
+                                    <div class="form-submit">
+                                    <input type="submit"   value="Diagnose" class="mdl-button mdl-js-button mdl-button--colored mdl-js-ripple-effect mdl-button--raised button button-primary button-lg">
+                                    </div>
+                                </form>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+				
+<!------End ------->
+
+		</div>
+        </div>
+    </div>
+ <!-- End Diagnose Section -->
+
+
+
+
+    <!-- Start Footer Section -->
+    <footer id="footer">
+        <div class="layer-stretch">
+            <!-- Start main Footer Section -->
+           <div class="row layer-wrapper">
+                <div class="col-md-4 ">
+                    <div class="container footer-a">
+                        <div class="tbl">
+                            <div class="tbl-row">
+                                <div class="tbl-cell"><i class="fa fa-map-marker"></i></div>
+                                <div class="tbl-cell">
+                                    <p class="paragraph-medium paragraph-white">
+                                        Saudi Arabia, Dammam
+                                    </p>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4 ">
+                    <div class="container footer-a">
+                        <div class="tbl">
+                            <div class="tbl-row">
+
+                                <div class="tbl-cell"><i class="fa fa-phone"></i></div>
+                                <div class="tbl-cell">
+                                    <p class="paragraph-medium paragraph-white">013-600-1343</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="container footer-a">
+                      <div class="tbl">
+                          <div class="tbl-row">
+                                <div class="tbl-cell"><i class="fa fa-envelope"></i></div>
+                                <div class="tbl-cell">
+                                    <p class="paragraph-medium paragraph-white">
+                                      <a  class="paragraph-medium paragraph-white" href="mailto: Easy Diagnosis <identify2021.noreply@gmail.com>?Subject=Report%20Problem:%20--fill%20report%20title--" target="_top"> Contact us </a>
+                                        </p>
+                                </div>
+                              </div>
+                            </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- End main Footer Section -->
+        <!-- Start Copyright Section -->
+        <div id="copyright">
+            <div class="layer-stretch">
+                <div class="paragraph-medium paragraph-white">Easy Diagnosis 2021 ©.</div>
+            </div>
+        </div><!-- End of Copyright Section -->
+    </footer><!-- End of Footer Section -->
+    
+    
+    <script>
+        
+<!-- //################################# ADD FEATURES AND REMOVE ANY ADDITIONAL ALERT ####################### -->        
+        <!-- CKD vaidation -->
+    function ckdformValidation(){
+        var crt = document.getElementById('crt').value;
+        var bun = document.getElementById('bun').value;
+        var text = "";
+
+        if (  crt === ""||bun === "" ){
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>All required fields must be filled</div>";
+            document.getElementById('ckdformerror').innerHTML = text;
+            return false;
+        }
+
+        if((/[a-z]/i.test(crt))||(/[a-z]/i.test(bun))  ){
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>Invalid value, all required text fields must contain numeric values only</div>";
+            document.getElementById('ckdformerror').innerHTML = text;
+            return false;
+        }
+        //alert("hay");
+        document.getElementById('ckdformerror').innerHTML = text;
+        return true; // true
+    }
+        
+    // dm vaidation
+    function dmformValidation(){
+        var slg = document.getElementById('slg').value;
+        var hct = document.getElementById('hct').value;
+        var mpv = document.getElementById('mpv').value;
+        var text = "";
+
+        if ( slg =="" || hct === ""|| mpv === ""){
+
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>All required  fields must be filled</div>";
+            document.getElementById('dmformerror').innerHTML = text;
+            return false;
+        }
+        if((/[a-z]/i.test(hct)) || (/[a-z]/i.test(mpv)) || (/[a-z]/i.test(slg)) ){
+
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>Invalid value, all required text fields must contain numeric values only</div>";
+            document.getElementById('dmformerror').innerHTML = text;
+            return false;
+
+        }
+        //alert("hay");
+
+        document.getElementById('dmformerror').innerHTML = text;
+        return true;
+    }
+
+    // CHD vaidation
+    function ckdformValidation(){
+        var crt = document.getElementById('crt').value;
+        var bun = document.getElementById('bun').value;
+        var text = "";
+
+
+        if (  crt === ""||bun === "" ){
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>All required fields must be filled</div>";
+            document.getElementById('ckdformerror').innerHTML = text;
+            return false;
+        }
+
+        if((/[a-z]/i.test(crt))||(/[a-z]/i.test(bun))  ){
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>Invalid value, all required text fields must contain numeric values only</div>";
+            document.getElementById('ckdformerror').innerHTML = text;
+            return false;
+        }
+        document.getElementById('ckdformerror').innerHTML = text;
+        return true; // true
+    }
+
+    function chdformValidation(){
+        var genderCHD = document.getElementById('genderCHD').value;
+        var ageCHD = document.getElementById('ageCHD').value;
+        var bunCHD = document.getElementById('bunCHD').value;
+        var dbiliCHD = document.getElementById('dbiliCHD').value;
+        var creatCHD = document.getElementById('creatCHD').value;
+        var albuminCHD = document.getElementById('albuminCHD').value;
+        var tbiliCHD = document.getElementById('tbiliCHD').value;
+        var text = "";
+
+        if ( genderCHD =="" || ageCHD === ""|| bunCHD === "" || dbiliCHD === "" || creatCHD === "" || albuminCHD === "" || tbiliCHD === "" ){
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>All required  fields must be filled</div>";
+            document.getElementById('chdformerror').innerHTML = text;
+            return false;
+        }
+        if((/[a-z]/i.test(ageCHD)) || (/[a-z]/i.test(bunCHD)) || (/[a-z]/i.test(dbiliCHD)) || (/[a-z]/i.test(creatCHD)) || (/[a-z]/i.test(albuminCHD)) || (/[a-z]/i.test(tbiliCHD)) ){
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>Invalid value, all required text fields must contain numeric values only</div>";
+            document.getElementById('chdformerror').innerHTML = text;
+            return false;
+        }
+
+        document.getElementById('chdformerror').innerHTML = text;
+        return true;
+    }
+
+    function raformValidation(){
+        var genderRA = document.getElementById('genderRA').value;
+        var ageRA = document.getElementById('ageRA').value;
+        var albuminRA = document.getElementById('albuminRA').value;
+        var AlkPhosRA = document.getElementById('AlkPhosRA').value;
+        var bunRA = document.getElementById('bunRA').value;
+        var ClRA = document.getElementById('ClRA').value;
+        var CO2RA = document.getElementById('CO2RA').value;
+        var creatRA = document.getElementById('creatRA').value;
+        var dbiliRA = document.getElementById('dbiliRA').value;
+        var GGTPRA = document.getElementById('GGTPRA').value;
+        var hgbRA = document.getElementById('hgbRA').value;
+        var hctRA = document.getElementById('hctRA').value;
+        var KRA = document.getElementById('KRA').value;
+        var LDHRA = document.getElementById('LDHRA').value;
+        var MCHRA = document.getElementById('MCHRA').value;
+        var MCHCRA = document.getElementById('MCHCRA').value;
+        var MCVRA = document.getElementById('MCVRA').value;
+        var MPVRA = document.getElementById('MPVRA').value;
+        var NaRA = document.getElementById('NaRA').value;
+        var PltRA = document.getElementById('PltRA').value;
+        var RBCRA = document.getElementById('RBCRA').value;
+        var RDWRA = document.getElementById('RDWRA').value;
+        var SGOTRA = document.getElementById('SGOTRA').value;
+        var SGPTRA = document.getElementById('SGPTRA').value;
+        var TbiliRA = document.getElementById('TbiliRA').value;
+        var TProteinRA = document.getElementById('TProteinRA').value;
+
+        var text = "";
+
+        if ( genderRA==="" || ageRA ==="" || albuminRA === ""|| AlkPhosRA === "" || bunRA === "" || ClRA === "" ||CO2RA === "" 
+		||creatRA === "" ||dbiliRA === "" ||GGTPRA === "" ||hgbRA === "" ||hctRA === "" ||KRA === "" ||LDHRA === "" ||MCHRA === "" 
+		||MCHCRA === "" ||MCVRA === "" ||MPVRA === "" ||NaRA === "" ||PltRA === "" ||RBCRA === "" ||RDWRA === "" ||SGOTRA === "" 
+		||SGPTRA === "" ||TbiliRA === "" ||TProteinRA === ""){
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>All required  fields must be filled</div>";
+            document.getElementById('raformerror').innerHTML = text;
+            return false;
+        }
+        if((/[a-z]/i.test(ageRA))|| (/[a-z]/i.test(albuminRA)) || (/[a-z]/i.test(AlkPhosRA))|| 
+			(/[a-z]/i.test(bunRA)) || (/[a-z]/i.test(ClRA)) || (/[a-z]/i.test(CO2RA)) || (/[a-z]/i.test(creatRA)) 
+			|| (/[a-z]/i.test(dbiliRA)) || (/[a-z]/i.test(GGTPRA)) || (/[a-z]/i.test(hgbRA)) || (/[a-z]/i.test(hctRA))|| 
+			(/[a-z]/i.test(KRA)) || (/[a-z]/i.test(LDHRA)) || (/[a-z]/i.test(MCHRA)) || (/[a-z]/i.test(MCHCRA)) || 
+			(/[a-z]/i.test(MCVRA)) || (/[a-z]/i.test(MPVRA)) || (/[a-z]/i.test(NaRA)) || (/[a-z]/i.test(PltRA)) || 
+			(/[a-z]/i.test(RBCRA)) || (/[a-z]/i.test(RDWRA)) || (/[a-z]/i.test(SGOTRA)) || (/[a-z]/i.test(SGPTRA)) || 
+			(/[a-z]/i.test(TbiliRA)) || (/[a-z]/i.test(TProteinRA)) ){
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>Invalid value, all required text fields must contain numeric values only</div>";
+            document.getElementById('raformerror').innerHTML = text;
+            return false;
+        }
+
+        document.getElementById('raformerror').innerHTML = text;
+        return true;
+    }
+
+		// Asthma vaidation
+	function asformValidation(){
+        var genderAsthma = document.getElementById('genderAsthma').value;
+        var ageAsthma = document.getElementById('ageAsthma').value;
+        var BasophilsAsthma = document.getElementById('BasophilsAsthma').value;
+        var HematocritAsthma = document.getElementById('HematocritAsthma').value;
+		var HemoglobinAsthma = document.getElementById('HemoglobinAsthma').value;
+		var MCHAsthma = document.getElementById('MCHAsthma').value;
+		var MCHCAsthma = document.getElementById('MCHCAsthma').value;
+		var MPVAsthma = document.getElementById('MPVAsthma').value;
+		var WBCAsthma = document.getElementById('WBCAsthma').value;
+       
+	   var text = "";
+
+
+        if ( genderAsthma === ""||ageAsthma === "" ||BasophilsAsthma === ""||HematocritAsthma === ""||HemoglobinAsthma === ""||MCHAsthma === ""
+				||MCHCAsthma === ""||MPVAsthma === ""||WBCAsthma === "")
+		{          
+		   text = "<div class= 'alert alert-danger text-center' role= 'alert'>All required fields must be filled</div>";
+           document.getElementById('asformerror').innerHTML = text;
+           return false;
+        }
+
+        if((/[a-z]/i.test(ageAsthma))||(/[a-z]/i.test(BasophilsAsthma))||(/[a-z]/i.test(HematocritAsthma))||(/[a-z]/i.test(HemoglobinAsthma)) 
+		||(/[a-z]/i.test(MCHAsthma)) ||(/[a-z]/i.test(MCHCAsthma)) ||(/[a-z]/i.test(MPVAsthma)) ||(/[a-z]/i.test(WBCAsthma)) )
+		{
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>Invalid value, all required text fields must contain numeric values only</div>";
+            document.getElementById('asformerror').innerHTML = text;
+            return false;
+        }
+        document.getElementById('asformerror').innerHTML = text;
+        return true; // true
+    }
+		
+		//Thyroid Cancer vaidation
+		function tcformValidation(){
+        var genderThyroid = document.getElementById('genderThyroid').value;
+        var ageThyroid = document.getElementById('ageThyroid').value;
+        var HematocritThyroid = document.getElementById('HematocritThyroid').value;
+        var MCHCThyroid = document.getElementById('MCHCThyroid').value;
+        var MPVThyroid = document.getElementById('MPVThyroid').value;
+        var RBCThyroid = document.getElementById('RBCThyroid').value;
+        var WBCThyroid = document.getElementById('WBCThyroid').value;
+       
+        var text = "";
+
+
+        if (  genderThyroid === ""||ageThyroid === ""||HematocritThyroid === ""||MCHCThyroid === ""||MPVThyroid === "" 
+		||RBCThyroid === "" ||WBCThyroid === "")
+		{
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>All required fields must be filled</div>";
+            document.getElementById('tcformerror').innerHTML = text;
+            return false;
+        }
+
+        if((/[a-z]/i.test(ageThyroid))||(/[a-z]/i.test(HematocritThyroid))
+		||(/[a-z]/i.test(MCHCThyroid))||(/[a-z]/i.test(MPVThyroid))
+		||(/[a-z]/i.test(RBCThyroid))||(/[a-z]/i.test(WBCThyroid)))
+		{
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>Invalid value, all required text fields must contain numeric values only</div>";
+            document.getElementById('tcformerror').innerHTML = text;
+            return false;
+        }
+        document.getElementById('tcformerror').innerHTML = text;
+        return true; // true
+    }
+
+
+		//Schezophrenia vaidation
+		function scformValidation(){
+        
+        var genderSchizophrenia = document.getElementById('genderSchizophrenia').value;
+        var neuSchizophrenia = document.getElementById('neuSchizophrenia').value;
+        var lymSchizophrenia = document.getElementById('lymSchizophrenia').value;
+        var hgbSchizophrenia = document.getElementById('hgbSchizophrenia').value;
+        var hctSchizophrenia = document.getElementById('hctSchizophrenia').value;
+        var mchcSchizophrenia = document.getElementById('mchcSchizophrenia').value;
+        var rdwSchizophrenia = document.getElementById('rdwSchizophrenia').value;
+        var ureaSchizophrenia = document.getElementById('ureaSchizophrenia').value;
+
+        var text = "";
+
+        if ( genderSchizophrenia =="" || neuSchizophrenia === ""|| lymSchizophrenia === ""|| hgbSchizophrenia === "" 
+		|| hctSchizophrenia === "" || mchcSchizophrenia === ""|| rdwSchizophrenia === ""|| ureaSchizophrenia === "")
+		{
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>All required  fields must be filled</div>";
+            document.getElementById('scformerror').innerHTML = text;
+            return false;
+        }
+
+        if((/[a-z]/i.test(neuSchizophrenia)) ||(/[a-z]/i.test(lymSchizophrenia)) || (/[a-z]/i.test(hgbSchizophrenia)) 
+		|| (/[a-z]/i.test(hctSchizophrenia)) || (/[a-z]/i.test(mchcSchizophrenia)) || (/[a-z]/i.test(rdwSchizophrenia)) 
+		|| (/[a-z]/i.test(ureaSchizophrenia)) )
+		{
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>Invalid value, all required text fields must contain numeric values only</div>";
+            document.getElementById('scformerror').innerHTML = text;
+            return false;
+        }
+
+        document.getElementById('scformerror').innerHTML = text;
+        return true;
+    }
+
+<!-- //#######################################TO EDIT START FROM HERE################################### -->
+	//AD function
+		function ADformValidation()
+		{
+
+        var genderAD = document.getElementById('genderAD').value;
+        var AgeAD = document.getElementById('AgeAD').value;
+        var PulseAD = document.getElementById('PulseAD').value;
+        var Respiratory_RateAD = document.getElementById('Respiratory_RateAD').value;
+        var BP_DiastolicAD = document.getElementById('BP_DiastolicAD').value;
+        var wbcAD = document.getElementById('wbcAD').value;
+        var rbcAD = document.getElementById('rbcAD').value;
+        var HemoglobinAD = document.getElementById('HemoglobinAD').value;
+        var HematocritAD = document.getElementById('HematocritAD').value;
+        var MCVAD = document.getElementById('MCVAD').value;
+        var MCHAD = document.getElementById('MCHAD').value;
+        var RDWAD = document.getElementById('RDWAD').value;
+        var MPVAD = document.getElementById('MPVAD').value;
+
+        var text = "";
+
+        if ( genderAD =="" || AgeAD==="" || PulseAD==="" || Respiratory_RateAD==="" || BP_DiastolicAD==="" || wbcAD==="" || 
+        rbcAD==="" || HemoglobinAD==="" || HematocritAD==="" || MCVAD==="" || MCHAD==="" || RDWAD==="" || MPVAD==="")
+		{
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>All required  fields must be filled</div>";
+            document.getElementById('ADformerror').innerHTML = text;
+            return false;
+        }
+
+        if((/[a-z]/i.test(AgeAD))|| (/[a-z]/i.test(PulseAD))|| (/[a-z]/i.test(Respiratory_RateAD))|| (/[a-z]/i.test(BP_DiastolicAD))|| 
+        (/[a-z]/i.test(wbcAD))|| (/[a-z]/i.test(rbcAD))|| (/[a-z]/i.test(HemoglobinAD))|| (/[a-z]/i.test(HematocritAD))|| 
+        (/[a-z]/i.test(MCVAD))|| (/[a-z]/i.test(MCHAD))|| (/[a-z]/i.test(RDWAD))|| (/[a-z]/i.test(MPVAD)))
+		{
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>Invalid value, all required text fields must contain numeric values only</div>";
+            document.getElementById('ADformerror').innerHTML = text;
+            return false;
+        }
+
+        document.getElementById('ADformerror').innerHTML = text;
+        return true;
+    }
+
+
+	//Hypothyroidism function
+		function pre_HypoformValidation()
+		{
+			if(MCVHypo === "")
+			{
+				alert('issue');
+				return false;
+			}else{
+				HypoformValidation();
+			}
+		}
+		function HypoformValidation()
+		{
+		
+
+	var ageHypo = document.getElementById('ageHypo').value;
+    var BPSHypo = document.getElementById('BPSHypo').value;
+	var RespHypo = document.getElementById('RespHypo').value;
+	var MCVHypo = document.getElementById('MCVHypo').value;
+	var POHypo = document.getElementById('POHypo').value;
+
+
+        //EXAMPLE(MUST BE REMOVED): var mpv = document.getElementById('mpv').value;
+	
+	//DON'T REMOVE THIS	
+        var text = "";
+
+        if ( ageHypo=="" || BPSHypo === "" || RespHypo === "" || MCVHypo === "" || POHypo === ""){
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>All required  fields must be filled</div>";
+            document.getElementById('Hypoformerror').innerHTML = text;
+            return false;}
+        if((/[a-z]/i.test(ageHypo)) || (/[a-z]/i.test(BPSHypo)) || (/[a-z]/i.test(RespHypo)) || (/[a-z]/i.test(MCVHypo))|| (/[a-z]/i.test(POHypo)) ){
+
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>Invalid value, all required text fields must contain numeric values only</div>";
+            document.getElementById('Hypoformerror').innerHTML = text;
+            return false;}
+
+        document.getElementById('Hypoformerror').innerHTML = text;
+        return true;}
+	
+	    function msformValidation(){
+		
+        var MSheight = document.getElementById('MSheight').value;
+        var MSSSS = document.getElementById('MSSSS').value;
+        var MSRTSA = document.getElementById('MSRTSA').value;
+        var MSLSC = document.getElementById('MSLSC').value;
+        var MSRDSA = document.getElementById('MSRDSA').value;
+        var MSRDSC = document.getElementById('MSRDSC').value;
+        var MSLONSD = document.getElementById('MSLONSD').value;        
+
+        var text = "";
+
+        if ( MSheight==="" || MSSSS ==="" || MSRTSA === ""|| MSLSC === "" || MSRDSA === "" || MSRDSC === "" ||MSLONSD === ""){
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>All required  fields must be filled</div>";
+            document.getElementById('msformerror').innerHTML = text;
+            return false;
+        }else if((/[a-z]/i.test(MSheight))|| (/[a-z]/i.test(MSSSS)) || (/[a-z]/i.test(MSRTSA))|| 
+			(/[a-z]/i.test(MSLSC)) || (/[a-z]/i.test(MSRDSA)) || (/[a-z]/i.test(MSRDSC)) || (/[a-z]/i.test(MSLONSD))){
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>Invalid value, all required text fields must contain numeric values only</div>";
+            document.getElementById('msformerror').innerHTML = text;
+            return false;
+        }else{
+			document.getElementById('msformerror').innerHTML = text;
+			return true;
+		}
+    }
+	
+       function pcformValidation(){
+
+        var PCperimeter = document.getElementById('PCperimeter').value;
+        var PCarea = document.getElementById('PCarea').value;
+        var PCsmoothness = document.getElementById('PCsmoothness').value;
+        var PCcompactness = document.getElementById('PCcompactness').value;
+        
+
+        var text = "";
+		
+        if (PCperimeter === ""|| PCarea === "" || PCsmoothness === "" || PCcompactness === ""){
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>All required  fields must be filled</div>";
+            document.getElementById('pcformerror').innerHTML = text;
+            return false;
+        }else if((/[a-z]/i.test(PCperimeter))|| 
+			(/[a-z]/i.test(PCarea)) || (/[a-z]/i.test(PCsmoothness)) || (/[a-z]/i.test(PCcompactness))){
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>Invalid value, all required text fields must contain numeric values only</div>";
+            document.getElementById('pcformerror').innerHTML = text;
+            return false;
+        }else{
+
+			document.getElementById('pcformerror').innerHTML = text;
+			return true;
+		}
+    }
+	
+	
+    	//Glaucoma function
+		function GlaucomaformValidation()
+		{
+
+            var atG = document.getElementById('atG').value;
+            var eanG = document.getElementById('eanG').value;
+            var mhciG = document.getElementById('mhciG').value;
+            var vasiG = document.getElementById('vasiG').value;
+            var vargG = document.getElementById('vargG').value;
+            var varsG = document.getElementById('varsG').value;
+            var tmiG = document.getElementById('tmiG').value;
+
+        var text = "";
+
+        if (  atG==="" || eanG==="" || mhciG==="" || vasiG==="" || vargG==="" || varsG==="" || tmiG==="")
+		{
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>All required  fields must be filled</div>";
+            document.getElementById('Glaucomaformerror').innerHTML = text;
+            return false;
+        }
+
+        if((/[a-z]/i.test(atG))|| (/[a-z]/i.test(eanG))|| (/[a-z]/i.test(mhciG))|| (/[a-z]/i.test(vasiG))|| 
+        (/[a-z]/i.test(vargG))|| (/[a-z]/i.test(varsG))|| (/[a-z]/i.test(tmiG)))
+		{
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>Invalid value, all required text fields must contain numeric values only</div>";
+            document.getElementById('Glaucomaformerror').innerHTML = text;
+            return false;
+        }
+
+        document.getElementById('Glaucomaformerror').innerHTML = text;
+        return true;
+    }
+
+    	//Lung Cancer function
+		function LCformValidation()
+		{
+
+            var genderLC = document.getElementById('genderLC').value;
+            var ageLC = document.getElementById('ageLC').value;
+            var smokingLC = document.getElementById('smokingLC').value;
+            var yellow_FingersLC = document.getElementById('yellow_FingersLC').value;
+            var anxietyLC = document.getElementById('anxietyLC').value;
+            var wheezingLC = document.getElementById('wheezingLC').value;
+            var peer_PressureLC = document.getElementById('peer_PressureLC').value;
+            var chronic_DiseaseLC = document.getElementById('chronic_DiseaseLC').value;
+            var fatigueLC = document.getElementById('fatigueLC').value;
+            var allergyLC = document.getElementById('allergyLC').value;
+            var coughingLC = document.getElementById('coughingLC').value;
+            var alcoholLC = document.getElementById('alcoholLC').value;
+            var shortness_of_BreathLC = document.getElementById('shortness_of_BreathLC').value;
+            var swallowing_DifficultyLC = document.getElementById('swallowing_DifficultyLC').value;
+            var chest_PainLC = document.getElementById('chest_PainLC').value;
+
+        var text = "";
+
+        if ( genderLC==="" || ageLC==="" || smokingLC==="" || yellow_FingersLC==="" || anxietyLC==="" || wheezingLC==="" || peer_PressureLC==="" || 
+        chronic_DiseaseLC==="" || fatigueLC==="" || allergyLC==="" || coughingLC==="" || alcoholLC==="" || shortness_of_BreathLC==="" 
+        || swallowing_DifficultyLC==="" || chest_PainLC==="")
+		{
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>All required  fields must be filled</div>";
+            document.getElementById('LCformerror').innerHTML = text;
+            return false;
+        }
+
+        if((/[a-z]/i.test(ageLC))|| (/[a-z]/i.test(smokingLC))|| (/[a-z]/i.test(yellow_FingersLC))|| (/[a-z]/i.test(anxietyLC))|| 
+        (/[a-z]/i.test(wheezingLC))|| (/[a-z]/i.test(peer_PressureLC))|| (/[a-z]/i.test(chronic_DiseaseLC))|| (/[a-z]/i.test(fatigueLC))
+        || (/[a-z]/i.test(allergyLC))|| (/[a-z]/i.test(coughingLC))|| (/[a-z]/i.test(alcoholLC))|| (/[a-z]/i.test(shortness_of_BreathLC))
+        || (/[a-z]/i.test(swallowing_DifficultyLC))|| (/[a-z]/i.test(chest_PainLC)))
+		{
+            text = "<div class= 'alert alert-danger text-center' role= 'alert'>Invalid value, all required text fields must contain numeric values only</div>";
+            document.getElementById('LCformerror').innerHTML = text;
+            return false;
+        }
+
+        document.getElementById('LCformerror').innerHTML = text;
+        return true;
+    }
+<!-- //##########################################NEEDS DOUBLE CHECK############################# -->
+    function errors(){
+
+        document.getElementById('ckdformerror').innerHTML = "";
+        document.getElementById("ckdform").reset();
+
+        document.getElementById('dmformerror').innerHTML = "";
+        document.getElementById("DMform").reset();
+
+        document.getElementById('chdformerror').innerHTML = "";
+        document.getElementById("chdform").reset();
+
+        document.getElementById('raformerror').innerHTML = "";
+        document.getElementById("raform").reset();
+
+        document.getElementById('asformerror').innerHTML = "";
+        document.getElementById("asform").reset();
+
+        document.getElementById('tcformerror').innerHTML = "";
+        document.getElementById("tcform").reset();
+		
+		document.getElementById('pcformerror').innerHTML = "";
+        document.getElementById("pcform").reset();
+		
+		document.getElementById('msformerror').innerHTML = "";
+        document.getElementById("msform").reset();
+
+        document.getElementById('scformerror').innerHTML = "";
+        document.getElementById("scform").reset();
+
+	document.getElementById('ADformerror').innerHTML = "";
+        document.getElementById("ADform").reset();
+
+	    document.getElementById('LCformerror').innerHTML = "";
+        document.getElementById("LCform").reset();
+
+	    document.getElementById('Glaucomaformerror').innerHTML = "";
+        document.getElementById("Glaucomaform").reset();
+		
+	document.getElementById('BCformerror').innerHTML = "";
+        document.getElementById("BCform").reset();
+
+	document.getElementById('ADHDformerror').innerHTML = "";
+        document.getElementById("ADHDform").reset();
+
+	document.getElementById('Hypoformerror').innerHTML = "";
+        document.getElementById("Hypoform").reset();
+    }
+
+
+    </script>
+    <!-- **********Included Scripts*********** -->
+
+    <script src='{{url_for("static", filename= "js/jquery-2.1.4.min.js")}}'></script>
+    <!-- Popper JavaScript-->
+    <script src='{{url_for("static", filename= "js/popper.min.js")}}'></script>
+    <!-- Bootstrap Core JavaScript-->
+    <script src='{{url_for("static", filename= "js/bootstrap.min.js")}}'></script>
+    <!-- Material Design Lite JavaScript-->
+    <script src='{{url_for("static", filename= "js/material.min.js")}}'></script>
+    <!-- Material Select Field Script -->
+    <script src='{{url_for("static", filename= "js/mdl-selectfield.min.js")}}'></script>
+    <!-- Flexslider Plugin JavaScript-->
+    <script src='{{url_for("static", filename= "js/jquery.flexslider.min.js")}}'></script>
+    <!-- Owl Carousel Plugin JavaScript-->
+    <script src='{{url_for("static", filename= "js/owl.carousel.min.js")}}'></script>
+    <!-- Scrolltofixed Plugin JavaScript-->
+    <script src='{{url_for("static", filename= "js/jquery-scrolltofixed.min.js")}}'></script>
+    <!-- Magnific Popup Plugin JavaScript-->
+    <script src='{{url_for("static", filename= "js/jquery.magnific-popup.min.js")}}'></script>
+    <!-- WayPoint Plugin JavaScript-->
+    <script src='{{url_for("static", filename= "js/jquery.waypoints.min.js")}}'></script>
+    <!-- CounterUp Plugin JavaScript-->
+    <script src='{{url_for("static", filename= "js/jquery.counterup.js")}}'></script>
+    <!-- SmoothScroll Plugin JavaScript-->
+    <script src='{{url_for("static", filename= "js/smoothscroll.min.js")}}'></script>
+    <!--Custom JavaScript for Klinik Template-->
+    <script src='{{url_for("static", filename= "js/custom.js")}}'></script>
+</body>
+</html>
