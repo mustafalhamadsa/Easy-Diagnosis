@@ -1,6 +1,6 @@
 # Easy Diagnosis
 
-## Multiple sclerosis, prostate cancer, and hypothyroidism are just a few of the chronic conditions that Easy Diagnosis identifies preemptively utilizing machine learning techniques and better yet determines the likelihood of catching the disease so that an early intervention may be made to improve health conditions in the Kingdom. Strengthening the healthcare system in line with the 2030 Vision of the Kingdom of Saudi Arabia is one of its main goals.
+## Multiple sclerosis, prostate cancer, and hypothyroidism are just a few of the chronic conditions that Easy Diagnosis identifies preemptively by utilizing machine learning techniques and better yet determines the likelihood of catching the disease so that an early intervention may be made to improve health conditions in the Kingdom of Saudi Arabia strengthening the healthcare system in line with the 2030 Vision of it as one of its main goals.
 
 # Homepage
 ![msedge_7Ix8lbGkzy](https://user-images.githubusercontent.com/100326225/210038015-2204b892-f2ce-47a9-94ce-d7413be5648c.png)
