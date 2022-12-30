@@ -1,2 +1,2 @@
-# easy-diagnosis
-# A website that uses machine learning to preemptively predict various chronic diseases.
+# Easy Diagnosis
+## Multiple sclerosis, prostate cancer, and hypothyroidism are just a few of the chronic conditions that a predictive algorithm might identify in advance. Utilizing machine learning techniques, the system develops early illness detection or, even better, determines the likelihood of contracting the disease so that an early intervention may be made to improve health conditions in the Kingdom. Strengthening the healthcare system in line with the 2030 Vision of the Kingdom of Saudi Arabia is one of its goals.
