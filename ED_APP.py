@@ -2097,5 +2097,3 @@ def username_gen(name):
         
     return User
 
-
-
